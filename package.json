@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.2",
+    "framer-motion": "^10.12.21",
     "mobx": "^6.9.1",
     "mobx-persist": "^0.4.1",
     "mobx-react": "^9.0.0",

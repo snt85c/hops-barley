@@ -35,7 +35,7 @@ export const schema = {
     type: "list",
     schema: {
       name: true,
-      type: true,
+      brewery_type: true,
       city: true,
       country: true,
       id: true,
@@ -45,7 +45,7 @@ export const schema = {
     type: "list",
     schema: {
       name: true,
-      type: true,
+      brewery_type: true,
       city: true,
       country: true,
       id: true,
