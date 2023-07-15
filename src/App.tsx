@@ -7,19 +7,19 @@ import {
 import Navbar from "./Navbar";
 import { Search } from "./Pages/Search";
 import ErrorPage from "./Pages/ErrorPage";
-import Favourites from "./Pages/Favourites";
+import { Favourites } from "./Pages/Favourites";
 
 function App() {
   return (
-      <Router>
-        <Outlet />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Search />} errorElement={<ErrorPage />} />
-          <Route path="/favourites" element={<Favourites />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </Router>
+    <Router>
+      <Outlet />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Search />} errorElement={<ErrorPage />} />
+        <Route path="/favourites" element={<Favourites />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </Router>
   );
 }
 
