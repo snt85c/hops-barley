@@ -5,13 +5,12 @@ import {
   Routes,
 } from "react-router-dom";
 import Navbar from "./Navbar";
-import Search from "./Pages/Search";
+import { Search } from "./Pages/Search";
 import ErrorPage from "./Pages/ErrorPage";
 import Favourites from "./Pages/Favourites";
 
 function App() {
   return (
-    <>
       <Router>
         <Outlet />
         <Navbar />
@@ -21,7 +20,6 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
-    </>
   );
 }
 
