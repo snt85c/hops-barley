@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-#root{
-  min-height:100vh;
-  min-width:100vw;
+#root {
+  min-height: 100vh;
+  min-width: 100vw;
+  color: "black";
 }
