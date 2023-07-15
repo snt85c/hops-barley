@@ -28,9 +28,6 @@ class Store {
     this.currentSearch = list;
   }
 
-  clearCurrentSearch() {
-    this.currentSearch = [];
-  }
 }
 
 export const schema = {
