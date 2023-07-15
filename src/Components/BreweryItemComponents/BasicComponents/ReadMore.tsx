@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { BreweryType } from "../../../assets/interfaces";
-import Overlay from "./Overlay";
+import Overlay from "../DetailedComponents/Overlay";
 
 export default function BreweryDetailedOverlay({
   brewery,

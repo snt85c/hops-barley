@@ -27,7 +27,6 @@ class Store {
   populateCurrentSearch(list: BreweryType[]) {
     this.currentSearch = list;
   }
-
 }
 
 export const schema = {
@@ -39,6 +38,8 @@ export const schema = {
       city: true,
       country: true,
       id: true,
+      latitude: true,
+      longitude: true,
     },
   },
   currentSearch: {
@@ -49,6 +50,8 @@ export const schema = {
       city: true,
       country: true,
       id: true,
+      latitude: true,
+      longitude: true,
     },
   },
 };

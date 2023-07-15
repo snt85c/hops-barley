@@ -4,8 +4,8 @@ export type BreweryType = {
   city: string;
   country: string;
   id: string;
-  lat: string;
-  long: string;
+  latitude: string;
+  longitude: string;
   street:string;
   postal_code:string;
 

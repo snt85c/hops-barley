@@ -12,7 +12,9 @@ export const Search = observer(() => {
   useEffect(() => {
     if (search && !isSearching) {
       setIsSearching(true);
-      fetch(`https://api.openbrewerydb.org/v1/breweries/search?query=${search}&per_page=27`)
+      fetch(
+        `https://api.openbrewerydb.org/v1/breweries/search?query=${search}&per_page=27`
+      )
         .then((data) => data.json())
         .then((data) => {
           setIsSearching(false);
@@ -44,9 +46,10 @@ export const Search = observer(() => {
           {isSearching && (
             <div className="text-xs tracking-widest">loading</div>
           )}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3">
-            {searchResult}
+          <div className="grid grid-cols-1 md:grid-cols-3">{searchResult}</div>
+          {!searchResult.length && (
+            <div className="mt-10">start a new search!</div>
+          )}
         </div>
       </>
     </Container>

@@ -7,11 +7,13 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
   };
   return (
     <div>
-      <span className="text-2xl md:text-5xl font-bold pb-2 leading-none">
-        {data.name}
-      </span>
-      <div onClick={handleStarContainerClick}>
-        <StarIcon brewery={data} />
+      <div className="flex justify-between">
+        <span className="text-2xl md:text-5xl font-bold pb-2 leading-none">
+          {data.name}
+        </span>
+        <div onClick={handleStarContainerClick}>
+          <StarIcon brewery={data} />
+        </div>
       </div>
       {data.brewery_type && (
         <div>
@@ -37,7 +39,7 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
           <span>{data.city}</span>
         </div>
       )}
-      {data.country && <div className="text-xs">{data.country}</div>}
+      {data.country && <div className="text-xs mt-3">{data.country}</div>}
     </div>
   );
 }

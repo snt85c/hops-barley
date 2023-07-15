@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import DetailedInfo from "./DetailedInfo";
 import { BreweryType } from "../../../assets/interfaces";
+import BreweryMap from "./BreweryMap";
 
 export default function Overlay({
   data,
@@ -17,6 +18,7 @@ export default function Overlay({
       className="fixed top-[5rem] left-[2rem] md:left-[5rem] right-[2rem] md:right-[5rem]  bottom-[2rem] bg-gradient-to-br from-neutral-200 via-white to-white/70 border-2 border-black rounded-lg p-5 z-50 flex flex-col justify-between"
     >
       <DetailedInfo data={data} />
+      <BreweryMap data={data} />
       <div className="flex justify-center items-center">
         <button
           onClick={() => setIsClicked(false)}
