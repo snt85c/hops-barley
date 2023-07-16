@@ -6,8 +6,8 @@ export type BreweryType = {
   id: string;
   latitude: string;
   longitude: string;
-  street:string;
-  postal_code:string;
-  state:string
-
+  street: string;
+  postal_code: string;
+  state: string;
+  website_url: string;
 };

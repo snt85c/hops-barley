@@ -10,11 +10,11 @@ describe("<App />", () => {
     const wrapper = render(<App />);
     expect(wrapper).toBeTruthy();
 
-      const searchNavbarButtonText = screen.getByText(/Search/i);
-      expect(searchNavbarButtonText.textContent).toBeTruthy();
+    const searchNavbarButtonText = screen.getByText(/Search/i);
+    expect(searchNavbarButtonText.textContent).toBeTruthy();
 
-      const FavNavbarButtonText = screen.getByText(/Favourites/i);
-      expect(FavNavbarButtonText.textContent).toBeTruthy();
+    const FavNavbarButtonText = screen.getByText(/Favourites/i);
+    expect(FavNavbarButtonText.textContent).toBeTruthy();
   });
 });
 
@@ -23,6 +23,7 @@ describe("<Favourites", () => {
     const wrapper = render(<Favourites />, { wrapper: BrowserRouter });
     expect(wrapper).toBeTruthy();
 
+    //find empty search text on screen
     const h1 = wrapper.container.querySelector("h1");
     expect(h1?.textContent).toBe("no items yet!");
   });
@@ -33,7 +34,12 @@ describe("<Search />", () => {
     const wrapper = render(<Search />, { wrapper: BrowserRouter });
     expect(wrapper).toBeTruthy();
 
+    //find empty search text on screen
     const h1 = wrapper.container.querySelector("h1");
     expect(h1?.textContent).toBe("start a new search!");
+
+    //find input on screen
+    const input = wrapper.container.querySelector("input");
+    expect(input?.placeholder).toBe("search");
   });
 });

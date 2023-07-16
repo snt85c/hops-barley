@@ -41,6 +41,7 @@ export const schema = {
       id: true,
       latitude: true,
       longitude: true,
+      website_url: true,
     },
   },
   currentSearch: {
@@ -54,6 +55,7 @@ export const schema = {
       id: true,
       latitude: true,
       longitude: true,
+      website_url: true,
     },
   },
 };
