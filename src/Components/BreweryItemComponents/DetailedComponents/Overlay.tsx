@@ -15,7 +15,7 @@ export default function Overlay({
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       transition={{ type: "spring", duration: 0.5 }}
-      className="fixed top-[5rem] left-[2rem] md:left-[5rem] right-[2rem] md:right-[5rem]  bottom-[2rem] bg-gradient-to-br from-neutral-200 via-white to-white/70 border-2 border-black rounded-lg p-5 z-50 flex flex-col justify-between"
+      className="fixed top-[13vh] left-[2rem] md:left-[5rem] right-[2rem] md:right-[5rem]  bottom-[2rem] bg-gradient-to-br from-neutral-200 via-white to-white/70 border-2 border-black rounded-lg p-5 z-50 flex flex-col justify-between"
     >
       <DetailedInfo data={data} />
       <BreweryMap data={data} />
