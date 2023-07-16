@@ -21,7 +21,7 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
           {data.brewery_type && (
             <div className="text-neutral-500">
               <span className="text-xs">type: </span>
-              <span>
+              <span className="text-xs md:text-base">
                 {data.brewery_type.substring(0, 1).toUpperCase() +
                   data.brewery_type.substring(1)}
               </span>
@@ -30,7 +30,7 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
           {data.street && (
             <div className="text-neutral-500">
               <span className="text-xs">street:</span>
-              <span>
+              <span className="text-xs md:text-base">
                 {data.street.substring(0, 1).toUpperCase() +
                   data.street.substring(1)}
               </span>
@@ -39,13 +39,13 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
           {data.postal_code && (
             <div className="text-neutral-500">
               <span className="text-xs">postal code:</span>
-              <span>{data.postal_code}</span>
+              <span className="text-xs md:text-base">{data.postal_code}</span>
             </div>
           )}
           {data.city && (
             <div className="text-neutral-500">
               <span className="text-xs">city: </span>
-              <span>{data.city}</span>
+              <span className="text-xs md:text-base">{data.city}</span>
             </div>
           )}
           {data.country && (

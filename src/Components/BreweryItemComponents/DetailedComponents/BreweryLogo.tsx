@@ -14,7 +14,7 @@ export default function BreweryLogo({ url }: { url: string }) {
         className="rounded-xl w-[128px] h-[128px]"
       ></img>
       {!loaded && (
-        <div className="flex justify-center items-center min-w-[128px] min-h-[128px] rounded-xl bg-neutral-300 animate-pulse">
+        <div className="flex justify-center items-center w-[128px] h-[128px] rounded-xl bg-neutral-300 animate-pulse">
           {" "}
           <div className="text-white">loading</div>
         </div>
