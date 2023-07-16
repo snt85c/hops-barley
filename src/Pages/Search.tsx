@@ -49,11 +49,7 @@ export const Search = observer(() => {
               loading
             </div>
           )}
-          {!searchResult.length && (
-            <div className="">
-              start a new search!
-            </div>
-          )}
+          {!searchResult.length && <h1>start a new search!</h1>}
         </div>
         <ShowBreweriesByType store={store.currentSearch} />
       </>

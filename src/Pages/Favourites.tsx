@@ -11,11 +11,11 @@ export const Favourites = observer(() => {
       <>
         <div className="mt-5 flex w-full">
           <ShowBreweriesByType store={store.favourites} />
-        {!store.favourites.length && (
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            no items yet!
-          </div>
-        )}
+          {!store.favourites.length && (
+            <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              no items yet!
+            </h1>
+          )}
         </div>
       </>
     </Container>
