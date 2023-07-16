@@ -11,7 +11,7 @@ export default function BreweryBasicInfo({
           {brewery.name}
         </div>
         <div className="text-sm">
-          {brewery.city} - {brewery.country}
+          {brewery.city} - {brewery.state} / {brewery.country}
         </div>
       </div>
     </>

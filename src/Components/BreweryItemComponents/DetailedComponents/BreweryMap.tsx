@@ -11,8 +11,6 @@ export default function BreweryMap({ data }: { data: BreweryType }) {
   };
 
   function changeZoom(map: google.maps.Map) {
-    console.log(map.getZoom());
-    console.log(map.getMapTypeId());
     if (map.getZoom()! > 15) {
       //high number means zooming in. Swap to satellite + markers (hybrid)
       map.setMapTypeId("hybrid");
@@ -72,14 +70,14 @@ export default function BreweryMap({ data }: { data: BreweryType }) {
           <div
             ref={ref}
             id="map"
-            className="h-[40vh] w-full z-[100] mt-1  rounded-xl"
+            className="h-[40vh] w-full z-[100] mt-1  rounded-xl bg-neutral-300"
           />
-          <div className="bg-white text-[0.50rem] tracking-widest leading-none text-center">
+          <div className="bg-white text-xs tracking-widest leading-none text-center">
             zoom-in and out to change map style
           </div>
         </div>
       ) : (
-        <div className="h-[50vh] w-full z-[100] flex justify-center items-center border-2 rounded-xl mt-1 bg-white text-center px-10">
+        <div className="h-[50vh] w-full z-[100] flex justify-center items-center border-2 rounded-xl mt-1 bg-neutral-200 text-black/60 md:tracking-wider  text-center px-10">
           {" "}
           maps are not available for this brewery
         </div>

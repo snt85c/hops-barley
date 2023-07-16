@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { BreweryItem } from "../Components/BreweryItemComponents/BreweryItem";
 import { useStore } from "../MobX/store";
 import Container from "../Components/Container";
+import ShowBreweriesByType from "../Components/BreweryItemComponents/BreweryItemSharedComponents/ShowBreweriesByType";
 
 export const Search = observer(() => {
   const [search, setSearch] = useState<string>("");
@@ -13,7 +14,7 @@ export const Search = observer(() => {
     if (search && !isSearching) {
       setIsSearching(true);
       fetch(
-        `https://api.openbrewerydb.org/v1/breweries/search?query=${search}&per_page=27`
+        `https://api.openbrewerydb.org/v1/breweries/search?query=${search}&per_page=50`
       )
         .then((data) => data.json())
         .then((data) => {
@@ -35,11 +36,11 @@ export const Search = observer(() => {
   return (
     <Container>
       <>
-        <div className="flex flex-col justify-center items-center relative">
+        <div className="flex flex-col justify-center items-center">
           <input
             type="text"
             placeholder="search"
-            className="w-[1/3] border-2 rounded-xl px-3 m-5 outline-none text-black"
+            className="w-[1/3] border-2 border-neutral-500 rounded-xl px-3 m-5 outline-none text-black"
             value={search}
             onChange={handleChange}
           />
@@ -48,11 +49,13 @@ export const Search = observer(() => {
               loading
             </div>
           )}
-          <div className="grid grid-cols-1 md:grid-cols-3">{searchResult}</div>
           {!searchResult.length && (
-            <div className="mt-10">start a new search!</div>
+            <div className="">
+              start a new search!
+            </div>
           )}
         </div>
+        <ShowBreweriesByType store={store.currentSearch} />
       </>
     </Container>
   );
