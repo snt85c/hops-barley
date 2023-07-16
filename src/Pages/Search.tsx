@@ -35,16 +35,18 @@ export const Search = observer(() => {
   return (
     <Container>
       <>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center relative">
           <input
             type="text"
             placeholder="search"
-            className="w-[1/3] border-2 rounded-xl px-3 m-5 mb-1 outline-none text-black"
+            className="w-[1/3] border-2 rounded-xl px-3 m-5 outline-none text-black"
             value={search}
             onChange={handleChange}
           />
           {isSearching && (
-            <div className="text-xs tracking-widest">loading</div>
+            <div className="text-xs tracking-widest absolute top-[50px]">
+              loading
+            </div>
           )}
           <div className="grid grid-cols-1 md:grid-cols-3">{searchResult}</div>
           {!searchResult.length && (

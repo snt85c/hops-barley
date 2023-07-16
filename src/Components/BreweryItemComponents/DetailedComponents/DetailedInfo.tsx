@@ -8,7 +8,7 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
   return (
     <div>
       <div className="flex justify-between">
-        <span className="text-2xl md:text-5xl font-bold pb-2 leading-none">
+        <span className="text-2xl md:text-3xl font-bold pb-2 leading-none ">
           {data.name}
         </span>
         <div onClick={handleStarContainerClick}>
@@ -18,13 +18,19 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
       {data.brewery_type && (
         <div>
           <span className="text-xs">type: </span>
-          <span>{data.brewery_type}</span>
+          <span>
+            {data.brewery_type.substring(0, 1).toUpperCase() +
+              data.brewery_type.substring(1)}
+          </span>
         </div>
       )}
       {data.street && (
         <div>
           <span className="text-xs">street:</span>
-          <span>{data.street}</span>
+          <span>
+            {data.street.substring(0, 1).toUpperCase() +
+              data.street.substring(1)}
+          </span>
         </div>
       )}
       {data.postal_code && (

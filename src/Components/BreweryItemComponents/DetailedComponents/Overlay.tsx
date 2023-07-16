@@ -15,14 +15,14 @@ export default function Overlay({
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       transition={{ type: "spring", duration: 0.5 }}
-      className="fixed top-[13vh] left-[2rem] md:left-[5rem] right-[2rem] md:right-[5rem]  bottom-[2rem] bg-gradient-to-br from-neutral-200 via-white to-white/70 border-2 border-black rounded-lg p-5 z-50 flex flex-col justify-between"
+      className="fixed top-[13vh] left-[2rem] md:left-[20vw] right-[2rem] md:right-[20vw]  bottom-[2rem] bg-gradient-to-b from-neutral-200 via-white to-white/90 border-2 rounded-lg p-5 z-50 flex flex-col justify-between"
     >
       <DetailedInfo data={data} />
       <BreweryMap data={data} />
       <div className="flex justify-center items-center">
         <button
           onClick={() => setIsClicked(false)}
-          className="px-5 border-2 bg-white rounded-xl w-[50vw] md:w-[33vw]"
+          className="px-5 border-2 border-neutral-500 bg-white rounded-xl w-[50vw] md:w-[10vw] mt-5"
         >
           close
         </button>

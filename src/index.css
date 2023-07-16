@@ -7,3 +7,19 @@
   min-width: 100vw;
   color: "black";
 }
+
+.fadeOutAnimation {
+  animation: fadeOut 2s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

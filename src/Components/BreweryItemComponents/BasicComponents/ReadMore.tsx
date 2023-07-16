@@ -26,7 +26,7 @@ export default function BreweryDetailedOverlay({
     <>
       <div ref={ref} className="flex pt-3">
         <button
-          className="text-xs border-2 w-full px-6 rounded-xl"
+          className="text-xs border-2 border-neutral-500 w-full px-6 rounded-xl"
           onClick={() => setIsClicked(true)}
         >
           read more
