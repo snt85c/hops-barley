@@ -17,10 +17,10 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
         </div>
       </div>
       <div className="flex justify-between mb-2">
-        <div>
+        <div className="w-[50%]">
           {data.brewery_type && (
-            <div className="text-neutral-500">
-              <span className="text-xs">type: </span>
+            <div className="flex flex-col md:flex-row ">
+              <span className="text-xs text-neutral-500">type: </span>
               <span className="text-xs md:text-base">
                 {data.brewery_type.substring(0, 1).toUpperCase() +
                   data.brewery_type.substring(1)}
@@ -28,8 +28,8 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
             </div>
           )}
           {data.street && (
-            <div className="text-neutral-500">
-              <span className="text-xs">street:</span>
+            <div className="flex flex-col md:flex-row">
+              <span className="text-xs text-neutral-500">street:</span>
               <span className="text-xs md:text-base">
                 {data.street.substring(0, 1).toUpperCase() +
                   data.street.substring(1)}
@@ -37,14 +37,14 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
             </div>
           )}
           {data.postal_code && (
-            <div className="text-neutral-500">
-              <span className="text-xs">postal code:</span>
+            <div className="flex flex-col md:flex-row">
+              <span className="text-xs text-neutral-500">postal code:</span>
               <span className="text-xs md:text-base">{data.postal_code}</span>
             </div>
           )}
           {data.city && (
-            <div className="text-neutral-500">
-              <span className="text-xs">city: </span>
+            <div className="flex flex-col md:flex-row">
+              <span className="text-xs text-neutral-500">city: </span>
               <span className="text-xs md:text-base">{data.city}</span>
             </div>
           )}
