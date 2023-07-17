@@ -48,11 +48,9 @@ export const StarIcon = observer(({ brewery }: { brewery: BreweryType }) => {
           variants={iconVariants}
           transition={iconTransition}
         >
-          <AiFillStar
-            size={40}
-            className="text-amber-500"
-            onClick={handleRemoveFromFav}
-          />
+          <button id="star-test" onClick={handleRemoveFromFav}>
+            <AiFillStar size={40} className="text-amber-500" />
+          </button>
         </motion.div>
       ) : (
         <motion.div
@@ -61,11 +59,9 @@ export const StarIcon = observer(({ brewery }: { brewery: BreweryType }) => {
           variants={iconVariants}
           transition={iconTransition}
         >
-          <AiOutlineStar
-            size={40}
-            className="text-amber-500"
-            onClick={handleAddToFav}
-          />
+          <button id="star-test" onClick={handleAddToFav}>
+            <AiOutlineStar size={40} className="text-amber-500" />
+          </button>
         </motion.div>
       )}
     </>

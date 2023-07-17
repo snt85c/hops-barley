@@ -44,12 +44,11 @@ describe("<App />", () => {
       </MemoryRouter>
     );
 
+    //set up the elements needed for this test
     const user = userEvent.setup();
-
     let FavNavbarButton = screen.getByRole("button", {
       name: "Favourites",
     });
-
     let SearchNavbarButton = screen.getByRole("button", {
       name: "Search",
     });

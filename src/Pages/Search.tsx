@@ -19,7 +19,7 @@ export const Search = observer(() => {
         .then((data) => data.json())
         .then((data) => {
           setIsSearching(false);
-          console.log(data);
+          // console.log(data);
           store.populateCurrentSearch([...data]);
         });
     }
