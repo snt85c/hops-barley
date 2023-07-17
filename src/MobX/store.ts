@@ -66,7 +66,7 @@ const dataType = {
   },
 };
 
-// Define the schema for the store
+// Define the schema for the store. this is used to rehydrate in main.tsx
 export const schema = {
   favourites: dataType,
   currentSearch: dataType,
