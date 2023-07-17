@@ -22,7 +22,7 @@ export default function Overlay({
       <div className="flex justify-center items-center">
         <button
           onClick={() => setIsClicked(false)}
-          className="px-5 border-2 border-neutral-500 bg-white rounded-xl w-[50vw] md:w-[10vw] mt-5"
+          className="px-5 border-2 border-neutral-500 bg-white rounded-xl w-[50vw] md:w-[10vw] mt-1"
         >
           close
         </button>

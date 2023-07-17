@@ -1,6 +1,6 @@
 import { BreweryType } from "../../assets/interfaces";
 import BreweryBasicInfo from "./BasicComponents/BreweryBasicInfo";
-import BreweryDetailedOverlay from "./BasicComponents/ReadMore";
+import ReadMore from "./BasicComponents/ReadMore";
 import { StarIcon } from "./BreweryItemSharedComponents/StarIcon";
 
 export const BreweryItem = ({ brewery }: { brewery: BreweryType }) => {
@@ -10,7 +10,7 @@ export const BreweryItem = ({ brewery }: { brewery: BreweryType }) => {
         <BreweryBasicInfo brewery={brewery} />
         <StarIcon brewery={brewery} />
       </div>
-      <BreweryDetailedOverlay brewery={brewery} />
+      <ReadMore brewery={brewery} />
     </div>
   );
 };

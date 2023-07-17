@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { BreweryType } from "../../../assets/interfaces";
 import Overlay from "../DetailedComponents/Overlay";
 
-export default function BreweryDetailedOverlay({
+export default function ReadMore({
   brewery,
 }: {
   brewery: BreweryType;
@@ -24,7 +24,7 @@ export default function BreweryDetailedOverlay({
 
   return (
     <>
-      <div ref={ref} className="flex pt-3">
+      <div ref={ref}>
         <button
           className="text-xs border-2 border-neutral-500 w-full px-6 rounded-xl"
           onClick={() => setIsClicked(true)}

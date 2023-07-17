@@ -8,7 +8,7 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
   };
   return (
     <>
-      <div className="flex justify-between">
+      <div className="flex justify-between ">
         <span className=" text-2xl md:text-3xl font-bold pb-2 leading-none ">
           {data.name}
         </span>
@@ -19,37 +19,25 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
       <div className="flex justify-between mb-2">
         <div className="w-[50%]">
           {data.brewery_type && (
-            <div className="flex flex-col md:flex-row ">
-              <span className="text-xs text-neutral-500">type: </span>
-              <span className="text-xs md:text-base">
-                {data.brewery_type.substring(0, 1).toUpperCase() +
-                  data.brewery_type.substring(1)}
-              </span>
+            <div className="text-xs md:text-base">
+              {data.brewery_type.substring(0, 1).toUpperCase() +
+                data.brewery_type.substring(1)}
             </div>
           )}
           {data.street && (
-            <div className="flex flex-col md:flex-row">
-              <span className="text-xs text-neutral-500">street:</span>
-              <span className="text-xs md:text-base">
-                {data.street.substring(0, 1).toUpperCase() +
-                  data.street.substring(1)}
-              </span>
+            <div>
+              {data.street.substring(0, 1).toUpperCase() +
+                data.street.substring(1)}
             </div>
           )}
           {data.postal_code && (
-            <div className="flex flex-col md:flex-row">
-              <span className="text-xs text-neutral-500">postal code:</span>
-              <span className="text-xs md:text-base">{data.postal_code}</span>
-            </div>
+            <span className="text-xs md:text-base">{data.postal_code}</span>
           )}
           {data.city && (
-            <div className="flex flex-col md:flex-row">
-              <span className="text-xs text-neutral-500">city: </span>
-              <span className="text-xs md:text-base">{data.city}</span>
-            </div>
+            <div className="text-xs md:text-base">{data.city}</div>
           )}
           {data.country && (
-            <div className="text-xs mt-1 text-neutral-500">{data.country}</div>
+            <div className="text-xs text-neutral-500">{data.country}</div>
           )}
         </div>
         <BreweryLogo url={data.website_url} />
