@@ -1,10 +1,13 @@
 import { observer } from "mobx-react-lite";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { BreweryItem } from "../Components/BreweryItemComponents/BreweryItem";
 import { useStore } from "../MobX/store";
 import Container from "../Components/Container";
 import ShowBreweriesByType from "../Components/BreweryItemComponents/BreweryItemSharedComponents/ShowBreweriesByType";
 
+/**
+ * Search component  page that allows searching for breweries and displays the search results.
+ */
 export const Search = observer(() => {
   const [search, setSearch] = useState<string>("");
   const [isSearching, setIsSearching] = useState(false);
@@ -12,23 +15,26 @@ export const Search = observer(() => {
 
   useEffect(() => {
     if (search && !isSearching) {
+      //debounce
       setIsSearching(true);
+      // Perform the API request to search for breweries
       fetch(
         `https://api.openbrewerydb.org/v1/breweries/search?query=${search}&per_page=50`
       )
         .then((data) => data.json())
         .then((data) => {
           setIsSearching(false);
-          // console.log(data);
+          // Populate the current search results in the store
           store.populateCurrentSearch([...data]);
         });
     }
   }, [search]);
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
 
+  // Generate BreweryItem components for each search result
   let searchResult = store.currentSearch.map((place, i) => (
     <BreweryItem brewery={place} key={`${place.id}-${i}`} />
   ));
@@ -45,13 +51,16 @@ export const Search = observer(() => {
             value={search}
             onChange={handleChange}
           />
+          {/* Display loading text during search */}
           {isSearching && (
             <div className="text-xs tracking-widest absolute top-[50px]">
               loading
             </div>
           )}
+          {/* Display message when no search results */}
           {!searchResult.length && <h1>start a new search!</h1>}
         </div>
+        {/* Show breweries by type based on search results */}
         <ShowBreweriesByType store={store.currentSearch} />
       </>
     </Container>

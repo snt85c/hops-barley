@@ -2,6 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { BreweryType } from "../../../assets/interfaces";
 import Overlay from "../DetailedComponents/Overlay";
 
+/**
+ * ReadMore component provides a button to expand and show more information about a brewery.
+ * An event listener will detect when the user is clicking outiside the overlay once it's opened
+ * thus, closing it.
+ * @param brewery - BreweryType object containing information about the brewery.
+ */
 export default function ReadMore({
   brewery,
 }: {

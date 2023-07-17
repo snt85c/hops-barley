@@ -1,4 +1,9 @@
 import { BreweryType } from "../../../assets/interfaces";
+
+/**
+ * BreweryBasicInfo component displays basic information about a brewery.
+ * @param brewery - BreweryType object containing information about the brewery.
+ */
 export default function BreweryBasicInfo({
   brewery,
 }: {

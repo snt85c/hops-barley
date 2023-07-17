@@ -1,6 +1,11 @@
 import { BreweryType } from "../../../assets/interfaces";
 import { BreweryItem } from "../BreweryItem";
 
+/**
+ * FilterBreweryType component filters and displays breweries based on their type.
+ * @param store - Array of BreweryType objects representing the list of breweries.
+ * @param type - Object containing the name and description of the brewery type to filter.
+ */
 export default function FilterBreweryType({
   store,
   type,

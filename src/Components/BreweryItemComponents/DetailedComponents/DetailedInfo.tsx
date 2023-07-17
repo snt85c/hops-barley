@@ -2,6 +2,12 @@ import { BreweryType } from "../../../assets/interfaces";
 import { StarIcon } from "../BreweryItemSharedComponents/StarIcon";
 import BreweryLogo from "./BreweryLogo";
 
+
+/**
+ * DetailedInfo component displays detailed information about a brewery.
+ * this is part of the Overlay top area and includes the information, the star and the logo
+ * @param data - BreweryType object containing the brewery's information.
+ */
 export default function DetailedInfo({ data }: { data: BreweryType }) {
   const handleStarContainerClick = (event: React.MouseEvent) => {
     event.stopPropagation();
@@ -33,9 +39,7 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
           {data.postal_code && (
             <span className="text-xs md:text-base">{data.postal_code}</span>
           )}
-          {data.city && (
-            <div className="text-xs md:text-base">{data.city}</div>
-          )}
+          {data.city && <div className="text-xs md:text-base">{data.city}</div>}
           {data.country && (
             <div className="text-xs text-neutral-500">{data.country}</div>
           )}

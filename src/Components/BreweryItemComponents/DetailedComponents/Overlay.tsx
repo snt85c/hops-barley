@@ -3,6 +3,13 @@ import DetailedInfo from "./DetailedInfo";
 import { BreweryType } from "../../../assets/interfaces";
 import BreweryMap from "./BreweryMap";
 
+/**
+ * Overlay component displays a detailed overlay view of a brewery that will
+ *  appear on top of the main view when clicking the "read more" button.
+ * it can be closed with the button or by clicking elsewhere
+ * @param data - BreweryType object containing the brewery's information.
+ * @param setIsClicked - Function to update the state to close the overlay.
+ */
 export default function Overlay({
   data,
   setIsClicked,

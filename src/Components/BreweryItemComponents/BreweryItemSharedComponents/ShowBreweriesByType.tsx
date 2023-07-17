@@ -1,12 +1,16 @@
 import { BreweryType } from "../../../assets/interfaces";
 import FilterBreweryType from "./FilterBreweryType";
 
+/**
+ * ShowBreweriesByType component displays breweries categorized by their types.
+ * will map the TYPE and pass the information down to FilterBreweryType, where it will be sorted
+ * @param store - Array of BreweryType objects representing the list of breweries.
+ */
 export default function ShowBreweriesByType({
   store,
 }: {
   store: BreweryType[];
 }) {
-
   const TYPE = [
     {
       name: "micro",

@@ -5,7 +5,6 @@ import { Route, Routes, MemoryRouter } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import { Favourites } from "../Pages/Favourites";
 import { Search } from "../Pages/Search";
-import { delay } from "framer-motion";
 
 describe("Search an element", () => {
   test('it will search for "A Homestead Brew" and it should have"A Homestead Brew" on screen', async () => {
