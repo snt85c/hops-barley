@@ -1,5 +1,5 @@
 import { describe, test, expect } from "vitest";
-import { prettyDOM, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Route, Routes, MemoryRouter } from "react-router-dom";
 import Navbar from "../Components/Navbar";
@@ -54,17 +54,21 @@ describe("<App />", () => {
       name: "Search",
     });
 
+    //assert input on screen for search page (whcih is the main page rendered at the beginning)
     const input = wrapper.container.querySelector("input");
     expect(input?.placeholder).toBe("search");
 
     //click the favourites button
     await user.click(FavNavbarButton);
 
-    // Wait for the text to appear
+    // assert text on scren for favourites page (i expect no items)
     const textElement = screen.getByText(/no items yet!/i);
     expect(textElement.textContent).toBe("no items yet!");
 
+    //click on Search button
     await user.click(SearchNavbarButton);
+
+    //assert input on screen for search page
     expect(input?.placeholder).toBe("search");
   });
 });
