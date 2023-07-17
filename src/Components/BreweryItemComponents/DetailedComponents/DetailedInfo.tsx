@@ -34,7 +34,7 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
           <StarIcon brewery={data} />
         </div>
       </div>
-      <div className="flex justify-between mb-2">
+      <div className="flex justify-between my-5">
         {/* just below the information and the logo */}
         <div className="w-[50%]">
           {data.brewery_type && (
