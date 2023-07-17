@@ -1,17 +1,7 @@
 import { describe, test, expect } from "vitest";
-import {
-  render,
-  act,
-  waitFor,
-  screen,
-  fireEvent,
-} from "@testing-library/react";
-import {
-  Route,
-  BrowserRouter as Router,
-  Routes,
-  MemoryRouter,
-} from "react-router-dom";
+import { prettyDOM, render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { Route, Routes, MemoryRouter } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import { Favourites } from "../Pages/Favourites";
 import { Search } from "../Pages/Search";
@@ -27,17 +17,54 @@ describe("<App />", () => {
         </Routes>
       </MemoryRouter>
     );
-    act(async () => {
-        let FavNavbarButton = screen.getByRole("button", {
-          name: "Favourites",
-        });
-        // Click the "Favourites" button
-        fireEvent.click(FavNavbarButton);
+
+    const user = userEvent.setup();
+    const about = vi.spyOn(user, "click");
+
+    let FavNavbarButton = screen.getByRole("button", {
+      name: "Favourites",
     });
-    await waitFor(() => {
-      // Wait for the text to appear
-      const textElement = screen.getByText(/no items yet!/i);
-      expect(textElement.textContent).toBe("no items yet!");
+
+    //click the favourites button
+    await user.click(FavNavbarButton);
+    expect(about).toHaveBeenCalledTimes(1);
+
+    const textElement = screen.getByText(/no items yet!/i);
+    expect(textElement.textContent).toBe("no items yet!");
+  });
+
+  test("from Search to Favourites, then back to Search", async () => {
+    const wrapper = render(
+      <MemoryRouter initialEntries={["/"]}>
+        <Navbar />
+        <Routes>
+          <Route path="" element={<Search />} />
+          <Route path="/favourites" element={<Favourites />} />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    const user = userEvent.setup();
+
+    let FavNavbarButton = screen.getByRole("button", {
+      name: "Favourites",
     });
+
+    let SearchNavbarButton = screen.getByRole("button", {
+      name: "Search",
+    });
+
+    const input = wrapper.container.querySelector("input");
+    expect(input?.placeholder).toBe("search");
+
+    //click the favourites button
+    await user.click(FavNavbarButton);
+
+    // Wait for the text to appear
+    const textElement = screen.getByText(/no items yet!/i);
+    expect(textElement.textContent).toBe("no items yet!");
+
+    await user.click(SearchNavbarButton);
+    expect(input?.placeholder).toBe("search");
   });
 });

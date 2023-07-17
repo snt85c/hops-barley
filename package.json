@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.2",
+    "@testing-library/user-event": "^14.4.3",
     "framer-motion": "^10.12.21",
     "mobx": "^6.9.1",
     "mobx-persist": "^0.4.1",
