@@ -7,7 +7,7 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
     event.stopPropagation();
   };
   return (
-    <>
+    <div className="h-[30vh]">
       <div className="flex justify-between ">
         <span className=" text-2xl md:text-3xl font-bold pb-2 leading-none ">
           {data.name}
@@ -42,6 +42,6 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
         </div>
         <BreweryLogo url={data.website_url} />
       </div>
-    </>
+    </div>
   );
 }

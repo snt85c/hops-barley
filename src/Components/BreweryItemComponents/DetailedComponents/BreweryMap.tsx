@@ -77,7 +77,7 @@ export default function BreweryMap({ data }: { data: BreweryType }) {
           </div>
         </div>
       ) : (
-        <div className="h-full w-full z-[100] flex justify-center items-center border-2 rounded-xl mt-1 bg-neutral-200 text-black/60 md:tracking-wider  text-center px-10">
+        <div className="h-[40vh] w-full z-[100] flex justify-center items-center border-2 rounded-xl mt-1 bg-neutral-200 text-black/60 md:tracking-wider text-center px-10">
           {" "}
           maps are not available for this brewery
         </div>
