@@ -14,11 +14,11 @@ export default function BreweryLogo({ url }: { url: string }) {
         src={`https://logo.clearbit.com/${url}`}
         className="rounded-xl h-[100px] w-[100px]"
       />
-      {!loaded && <div
-        className="absolute top-0 left-0 flex justify-center items-center w-[100px] h-[100px] rounded-xl bg-neutral-300 animate-pulse"
-      >
-        <div className="text-white">loading</div>
-      </div>}
+      {!loaded && (
+        <div className="absolute top-0 left-0 flex justify-center items-center w-[100px] h-[100px] rounded-xl bg-neutral-300 animate-pulse">
+          <div className="text-white">loading</div>
+        </div>
+      )}
     </div>
   );
 }

@@ -39,6 +39,7 @@ export const Search = observer(() => {
         <div className="flex flex-col justify-center items-center">
           <input
             type="text"
+            name="searchbox"
             placeholder="search"
             className="w-[1/3] border-2 border-neutral-500 rounded-xl px-3 m-5 outline-none text-black"
             value={search}

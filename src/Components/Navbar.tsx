@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Outlet } from "react-router-dom";
 import TXTLOGO from "/typefontLOGO.svg";
 export default function Navbar() {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ export default function Navbar() {
         <div className="flex justify-center items-center gap-5 font-bold">
           <button
             style={{ color: location.pathname === "/" ? "black" : "" }}
-            onClick={() => navigate("/")}
+            onClick={() => navigate("")}
           >
             Search
           </button>
@@ -27,6 +27,7 @@ export default function Navbar() {
           className="object-contain w-[30vw] md:w-[15vw] md:h-[7vh]"
         />
       </div>
+      <Outlet />
     </>
   );
 }
