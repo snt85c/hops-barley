@@ -3,7 +3,7 @@ import Navbar from "./Components/NavbarComponents/Navbar";
 import { Search } from "./Pages/Search";
 import ErrorPage from "./Pages/ErrorPage";
 import { Favourites } from "./Pages/Favourites";
-import LoadingOverlay from "./Components/LoadingOverlay";
+import LoadingOverlay from "./Components/MiscComponents/LoadingOverlay";
 
 export default function App() {
   return (

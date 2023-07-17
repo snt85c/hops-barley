@@ -1,4 +1,4 @@
-import Container from "../Components/Container";
+import Container from "../Components/MiscComponents/Container";
 
 //** error page */
 export default function ErrorPage() {

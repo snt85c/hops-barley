@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { useStore } from "../MobX/store";
-import Container from "../Components/Container";
+import Container from "../Components/MiscComponents/Container";
 import ShowBreweriesByType from "../Components/BreweryItemComponents/BreweryItemSharedComponents/ShowBreweriesByType";
 
 /**
