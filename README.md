@@ -2,7 +2,7 @@
 
 This is a Vite/TypeScript/React application created for consideration by Devstry/Mindnow.
 
-The web app utilizes **Vite** and **testing-library/react** for testing.
+The web app utilizes **Vitest** and **testing-library/react** for testing.
 
 A live version of the app is available at: https://hops-barley.vercel.app/.
 
@@ -14,14 +14,24 @@ A live version of the app is available at: https://hops-barley.vercel.app/.
 
 - View detailed information about breweries, including a map generated with the **Google Maps JS API** and the brewery logo retrieved from **Clearbit**.
 
+- includes animations via the **Framer-Motion** libary
+
 ### State Management and Local Storage
 
 The application utilizes **MobX** for state management, allowing for efficient handling of data. The data, including favorites and search results, is stored locally using **mobx-persist**. This ensures that the user's selections and preferences, such as adding/removing breweries to/from favorites, are preserved between sessions. Even if the page is reloaded or the tab is closed, the information will persist.
+
+### Testing
+
+The app contains basic testing via **Vitest** and **testing-library/react** such as:
+
+- Rendering of components
+- Routing between components
+- Searching on the API
+- Adding elements to Favourite tab
+
 ### Usage
 
-The application is intuitive and easy to use. Users can interact with the breweries, add them to favorites, and access detailed information. The last search query is saved locally, eliminating the need to retype it when navigating between pages or closing the app.
-
-Enjoy exploring the world of breweries with Hops&Barley!
+The application is intuitive and easy to use. Users can search and interact with the breweries, add them to favorites, and access detailed information. The last search query is saved locally, eliminating the need to retype it when navigating between pages or closing the app.
 
 Please note: This project is for demonstration purposes and may not reflect real-time data from OpenBreweryDB.
 
