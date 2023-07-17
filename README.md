@@ -2,6 +2,8 @@
 
 This is a Vite/TypeScript/React application created for consideration by Devstry/Mindnow.
 
+![alt text](./public//Screenshot%202023-07-17%20at%2017-47-18%20Hops&Barley%20v1.0.png)
+
 The web app utilizes **Vitest** and **testing-library/react** for testing.
 
 A live version of the app is available at: https://hops-barley.vercel.app/.
@@ -18,7 +20,9 @@ A live version of the app is available at: https://hops-barley.vercel.app/.
 
 ### State Management and Local Storage
 
-The application utilizes **MobX** for state management, allowing for efficient handling of data. The data, including favorites and search results, is stored locally using **mobx-persist**. This ensures that the user's selections and preferences, such as adding/removing breweries to/from favorites, are preserved between sessions. Even if the page is reloaded or the tab is closed, the information will persist.
+The application utilizes **MobX** for state management, allowing for efficient handling of data. The data, including favorites and search results, is stored locally using **mobx-persist**. This ensures that the user's selections and preferences, such as adding/removing breweries to/from favorites, are preserved between sessions. Even if the page is reloaded or the tab is closed, the information will persist.![alt text](/public/Screenshot%202023-07-17%20at%2017-52-12%20Hops&Barley%20v1.0.png)
+
+
 
 ### Testing
 

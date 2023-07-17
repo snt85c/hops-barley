@@ -21,7 +21,7 @@ export default function Overlay({
     <>
       {/* Blur overlay */}
       <div
-        className="fixed top-0 left-0 right-0 bottom-0 bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-sm z-40"
+        className="fixed top-0 left-0 right-0 bottom-0 bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-sm z-40 "
         onClick={() => setIsClicked(false)}
       ></div>
 
