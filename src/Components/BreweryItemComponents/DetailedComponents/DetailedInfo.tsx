@@ -19,8 +19,16 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
     <div className="h-[30vh]">
       <div className="flex justify-between ">
         {/* on top, name and star icon */}
-        <span className=" text-2xl md:text-3xl font-bold pb-2 leading-none ">
+        <span className="flex flex-col text-2xl md:text-3xl font-bold pb-2 leading-none ">
           {data.name}
+          {data.website_url && (
+            <a
+              className="text-xs text-neutral-500 underline"
+              href={data.website_url}
+            >
+              {data.website_url}
+            </a>
+          )}
         </span>
         <div onClick={handleStarContainerClick}>
           <StarIcon brewery={data} />
@@ -48,14 +56,7 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
           {data.country && (
             <div className="text-xs text-neutral-500">{data.country}</div>
           )}
-          {data.website_url && (
-            <a
-              className="text-xs text-neutral-500 mt-1 underline"
-              href={data.website_url}
-            >
-              {data.website_url}
-            </a>
-          )}
+
           {data.phone && (
             <div className="text-xs text-neutral-500">tel: {data.phone}</div>
           )}
