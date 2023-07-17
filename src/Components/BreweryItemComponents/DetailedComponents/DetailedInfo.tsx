@@ -2,6 +2,12 @@ import { BreweryType } from "../../../assets/interfaces";
 import { StarIcon } from "../BreweryItemSharedComponents/StarIcon";
 import BreweryLogo from "./BreweryLogo";
 
+/**
+ * this is to avoid closing the Overlay when clicking on the star
+ */
+const handleStarContainerClick = (event: React.MouseEvent) => {
+  event.stopPropagation();
+};
 
 /**
  * DetailedInfo component displays detailed information about a brewery.
@@ -9,12 +15,10 @@ import BreweryLogo from "./BreweryLogo";
  * @param data - BreweryType object containing the brewery's information.
  */
 export default function DetailedInfo({ data }: { data: BreweryType }) {
-  const handleStarContainerClick = (event: React.MouseEvent) => {
-    event.stopPropagation();
-  };
   return (
     <div className="h-[30vh]">
       <div className="flex justify-between ">
+        {/* on top, name and star icon */}
         <span className=" text-2xl md:text-3xl font-bold pb-2 leading-none ">
           {data.name}
         </span>
@@ -23,6 +27,7 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
         </div>
       </div>
       <div className="flex justify-between mb-2">
+        {/* just below the information and the logo */}
         <div className="w-[50%]">
           {data.brewery_type && (
             <div className="text-xs md:text-base">
