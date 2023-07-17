@@ -13,6 +13,7 @@ export const Search = observer(() => {
   const [isSearching, setIsSearching] = useState(false);
   const store = useStore();
 
+
   useEffect(() => {
     if (search && !isSearching) {
       //debounce
@@ -23,6 +24,7 @@ export const Search = observer(() => {
       )
         .then((data) => data.json())
         .then((data) => {
+          console.log(data)
           setIsSearching(false);
           // Populate the current search results in the store
           store.populateCurrentSearch([...data]);

@@ -35,6 +35,7 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
                 data.brewery_type.substring(1)}
             </div>
           )}
+          {data.city && <div className="text-xs md:text-base">{data.city}</div>}
           {data.street && (
             <div>
               {data.street.substring(0, 1).toUpperCase() +
@@ -44,9 +45,19 @@ export default function DetailedInfo({ data }: { data: BreweryType }) {
           {data.postal_code && (
             <span className="text-xs md:text-base">{data.postal_code}</span>
           )}
-          {data.city && <div className="text-xs md:text-base">{data.city}</div>}
           {data.country && (
             <div className="text-xs text-neutral-500">{data.country}</div>
+          )}
+          {data.website_url && (
+            <a
+              className="text-xs text-neutral-500 mt-1 underline"
+              href={data.website_url}
+            >
+              {data.website_url}
+            </a>
+          )}
+          {data.phone && (
+            <div className="text-xs text-neutral-500">tel: {data.phone}</div>
           )}
         </div>
         <BreweryLogo url={data.website_url} />

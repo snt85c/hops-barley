@@ -10,4 +10,5 @@ export type BreweryType = {
   postal_code: string;
   state: string;
   website_url: string;
+  phone: string;
 };

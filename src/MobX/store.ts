@@ -63,6 +63,7 @@ const dataType = {
     latitude: true,
     longitude: true,
     website_url: true,
+    phone: true,
   },
 };
 
