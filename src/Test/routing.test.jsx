@@ -2,7 +2,7 @@ import { describe, test, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Route, Routes, MemoryRouter } from "react-router-dom";
-import Navbar from "../Components/Navbar";
+import Navbar from "../Components/NavbarComponents/Navbar";
 import { Favourites } from "../Pages/Favourites";
 import { Search } from "../Pages/Search";
 

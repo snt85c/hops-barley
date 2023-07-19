@@ -2,8 +2,8 @@ import { describe, test, expect } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Route, Routes, MemoryRouter } from "react-router-dom";
-import Navbar from "../Components/Navbar";
 import { Favourites } from "../Pages/Favourites";
+import Navbar from "../Components/NavbarComponents/Navbar";
 import { Search } from "../Pages/Search";
 
 describe("Search an element", () => {

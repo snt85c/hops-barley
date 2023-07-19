@@ -24,7 +24,7 @@ export const Search = observer(() => {
       )
         .then((data) => data.json())
         .then((data) => {
-          console.log(data)
+          // console.log(data)
           setIsSearching(false);
           // Populate the current search results in the store
           store.populateCurrentSearch([...data]);

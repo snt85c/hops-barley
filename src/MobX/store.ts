@@ -5,7 +5,7 @@ import { BreweryType } from "../assets/interfaces";
 /**
  * Store class represents the application store that manages state and actions related to breweries.
  */
-class Store {
+export class Store {
   favourites: BreweryType[] = [];
   currentSearch: BreweryType[] = [];
 
