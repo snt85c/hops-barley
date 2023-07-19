@@ -22,8 +22,6 @@ A live version of the app is available at: https://hops-barley.vercel.app/.
 
 The application utilizes **MobX** for state management, allowing for efficient handling of data. The data, including favorites and search results, is stored locally using **mobx-persist**. This ensures that the user's selections and preferences, such as adding/removing breweries to/from favorites, are preserved between sessions. Even if the page is reloaded or the tab is closed, the information will persist.![alt text](/public/Screenshot%202023-07-17%20at%2017-52-12%20Hops&Barley%20v1.0.png)
 
-
-
 ### Testing
 
 The app contains basic testing via **Vitest** and **testing-library/react** such as:
@@ -32,6 +30,7 @@ The app contains basic testing via **Vitest** and **testing-library/react** such
 - Routing between components
 - Searching on the API
 - Adding elements to Favourite tab
+- testing of the mobx state management
 
 ### Usage
 
@@ -108,5 +107,6 @@ this will test
     -search elements
     -add to favourites
     -routing to other pages
+    -mobx state management
 
 This project is licensed under the MIT License.
