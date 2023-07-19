@@ -12,7 +12,12 @@ export default function BreweryLogo({ url }: { url: string }) {
    * If the URL is empty or an error occurred while loading the image,
    * the component returns null and doesn't render anything.
    */
-  if (!url || error) return null;
+  if (!url || error)
+    return (
+      <div className=" flex justify-center items-center w-[100px] h-[100px] rounded-xl bg-neutral-300">
+        <div className="text-white">no logo</div>
+      </div>
+    );
 
   return (
     <div className="relative h-[100px] w-[100px]">
