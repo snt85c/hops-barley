@@ -5,7 +5,6 @@ import { Route, Routes, MemoryRouter } from "react-router-dom";
 import Navbar from "../Components/NavbarComponents/Navbar";
 import { Favourites } from "../Pages/Favourites";
 import { Search } from "../Pages/Search";
-import { useStore, Store } from "../MobX/store";
 
 describe("Search an element, then add to Fav", () => {
   test('it will search for "A" and it should have"A Homestead Brew" on screen, it will add it on favourite', async () => {

@@ -9,25 +9,29 @@ import ShowBreweriesByType from "../Components/BreweryItemComponents/BreweryItem
  * Search component  page that allows searching for breweries and displays the search results.
  */
 export const Search = observer(() => {
+  const [message, setMessage] = useState("");
   const [search, setSearch] = useState<string>("");
   const [isSearching, setIsSearching] = useState(false);
   const store = useStore();
-
 
   useEffect(() => {
     if (search && !isSearching) {
       //debounce
       setIsSearching(true);
+      setMessage("loading");
       // Perform the API request to search for breweries
       fetch(
         `https://api.openbrewerydb.org/v1/breweries/search?query=${search}&per_page=50`
       )
         .then((data) => data.json())
         .then((data) => {
-          // console.log(data)
           setIsSearching(false);
-          // Populate the current search results in the store
           store.populateCurrentSearch([...data]);
+        })
+        .catch((e: Error) => {
+          //on error, set a message on screen
+          setMessage("something went wrong. please try again later");
+          console.error("fetch error:", e);
         });
     }
   }, [search]);
@@ -56,7 +60,7 @@ export const Search = observer(() => {
           {/* Display loading text during search */}
           {isSearching && (
             <div className="text-xs tracking-widest absolute top-[50px]">
-              loading
+              {message}
             </div>
           )}
           {/* Display message when no search results */}
