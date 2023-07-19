@@ -10,7 +10,7 @@ export default function BreweryLogo({ url }: { url: string }) {
 
   /**
    * If the URL is empty or an error occurred while loading the image,
-   * the component returns null and doesn't render anything.
+   * the component returns a placeholder instead.
    */
   if (!url || error)
     return (
