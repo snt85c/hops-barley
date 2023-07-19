@@ -8,11 +8,7 @@ import Overlay from "../DetailedComponents/Overlay";
  * thus, closing it.
  * @param brewery - BreweryType object containing information about the brewery.
  */
-export default function ReadMore({
-  brewery,
-}: {
-  brewery: BreweryType;
-}) {
+export default function ReadMore({ brewery }: { brewery: BreweryType }) {
   const ref = useRef<HTMLDivElement>(null);
   const [isClicked, setIsClicked] = useState(false);
 

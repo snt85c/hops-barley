@@ -20,14 +20,14 @@ export default function FilterBreweryType({
   return (
     <div className="my-2">
       {result.length > 0 && (
-        <div className="py-1 bg-gradient-to-l from-white to-neutral-500 text-white pl-3 leading-none">
+        <div className="py-1 bg-neutral-300 text-neutral-800 pl-3 leading-none">
           <div className="text-xl font-bold tracking-[.3em] font-serif">
             {type.name.toUpperCase()}
           </div>
           <div className="text-xs">{type.descr}</div>
         </div>
       )}
-      <div className="grid grid-cols-1 md:grid-cols-3">{result}</div>
+      <div className="grid grid-cols-1 md:grid-cols-2">{result}</div>
     </div>
   );
 }
